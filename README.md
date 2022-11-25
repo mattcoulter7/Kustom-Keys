@@ -7,8 +7,8 @@ With the current trend of keyboard customisation, this application was developed
 - Various keyboard models
 - State saving so changes can be undone
 - Shortcuts to easily update multiple keys
--- Right Click to rise/drop all unedited keys
--- Up/Down on left pane to Rise/Drop all keys respectively
+  - Right Click to rise/drop all unedited keys
+  - Up/Down on left pane to Rise/Drop all keys respectively
 - Save the Keyboard design as a png to your computer
 - Save the Keyboard design to the server, so it can be modified later
 
