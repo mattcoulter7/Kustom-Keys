@@ -1,0 +1,35 @@
+<%
+    var duration = (Date.now() - design.lastModified) / 1000;
+    if (duration > 60 * 60 * 24){
+        duration = Math.round(duration / 60 / 60 / 24) + " days";
+    } else if (duration > 60 * 24){
+        duration = Math.round(duration / 60 / 24) + " hrs";
+    } else  if (duration > 60){
+        duration = Math.round(duration / 60) + " mins";
+    } else {
+        duration = Math.round(duration) + " secs";
+    }
+%>
+
+<div class="col">
+    <div class="card shadow-sm">
+        <%- include('_imageCarousel.ejs',{
+            id:design.id + "_img",
+            urls:[design.thumbnailurl,design.thumbnailurl,design.thumbnailurl,design.thumbnailurl]
+        }) %>
+        <div class="card-body">
+            <h3><%= design.title %></h3>
+            <p class="card-text"><%= design.description %></p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="designs/edit/<%= design.id %>" class="btn btn-sm btn-outline-secondary">Edit</a>
+
+                    <form class="d-inline"action="/designs/<%= design.id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                </div>
+                <small class="text-muted"><%= duration %></small>
+            </div>
+        </div>
+    </div>
+</div>
